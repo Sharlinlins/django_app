@@ -1,0 +1,52 @@
+{% extends "employee_base.html" %}
+
+{% block content %}
+
+<div class="container">
+        <div class="row offset-3">
+            <div class="col-sm-6">
+                <h1 class="text-center">New Employee</h1>
+                <form autocomplete="off" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>NAME</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="" required>
+                    </div>
+                    <div class="d-flex flex-row bd-highlight mb-6">
+                    <div class="form-group">
+                        <label>AGE</label>
+                        <input type="text" name="age" id="age" class="form-control" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label>PHONE</label>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder=""
+                            required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label>ADDRESS</label>
+                        <input type="text" name="address" id="address" class="form-control" placeholder=""
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label>ROLE</label>
+                        <select name="role" id="role" class="form-control">
+                            <option>---------Choose the Role---------</option>
+                            <option>Senior Developer</option>
+                            <option>Junior Developer</option>
+                            <option>Software Tester</option>
+                        </select>
+                    </div>
+                    <button type="submit" name="register" class="btn btn-primary btn-sm btn-block">REGISTER</button>
+                </form>
+            </div>
+            {% for message in messages%}
+            <p> {{ message }} </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

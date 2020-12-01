@@ -1,0 +1,21 @@
+{% extends "employee_base.html" %}
+{% load crispy_forms_tags %} 
+{% block content %}
+<h1 class="text-center">Edit Employee</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-md-4">
+      <form action="" method="POST">
+        {{ form|crispy }} {% csrf_token %}
+        <div class="row">
+          <div class="col">
+            <button type="submit" class="btn btn-primary" style="float: right">
+              Update Employee Details
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

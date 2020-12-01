@@ -1,0 +1,45 @@
+{% extends "employee_base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-md-4">
+                <h1 class="text-center">REGISTER</h1>
+                <form autocomplete="off" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>FIRST NAME</label>
+                        <input type="text" name="first_name" id="name" class="form-control" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label>LAST NAME</label>
+                        <input type="text" name="last_name" id="name" class="form-control" placeholder="Dee" required>
+                    </div>
+                    <div class="form-group">
+                        <label>USERNAME</label>
+                        <input type="text" name="username" id="name" class="form-control" placeholder="John Dee" required>
+                    </div>
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Someone@mail.com"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <input type="password" name="password1" id="password" class="form-control"
+                            placeholder="**********" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CONFIRM PASSWORD</label>
+                        <input type="password" name="password2" id="password" class="form-control"
+                            placeholder="**********" required>
+                    </div>
+                    <button type="submit" name="register" class="btn btn-primary btn-sm btn-block">REGISTER</button>
+                </form>
+            </div>
+            {% for message in messages%}
+            <p> {{ message }} </p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
