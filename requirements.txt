@@ -5,3 +5,4 @@ mysqlclient==2.0.1
 pytz==2020.4
 sqlparse==0.4.1
 psycopg2-binary
+dj-database-url
